@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   #method, #url    #controller, action(in controller)
   get "tasks", to: "tasks#index"
+  get "tasks/:id", to: "tasks#show", as: :task
   get "tasks/new", to: "tasks#new"
   post "tasks", to: "tasks#create"
-
+  # resources :tasks, only: [:index, :show, :new, :create]
 end
